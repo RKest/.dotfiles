@@ -1,6 +1,10 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 local M = { -- clangd = {},
   pyright = require 'plugins.lsp.servers.pyright',
   clangd = {
+    cmd = { '/sbin/clangd' },
     on_attach = function()
       vim.keymap.set('n', '<C-S>', function()
         vim.cmd 'ClangdSwitchSourceHeader'
@@ -45,6 +49,30 @@ local M = { -- clangd = {},
       },
     },
   },
+
+  ocamllsp = {
+    capabilities = capabilities,
+    on_attach = function(_, bufnr)
+      local settings = {
+        codelens = { enable = true },
+        inlayHints = { enable = true },
+      }
+      vim.lsp.buf_notify(bufnr, vim.lsp.protocol.Methods.workspace_didChangeConfiguration, {
+        settings = settings,
+      })
+      vim.api.nvim_create_autocmd({ 'BufEnter', 'InsertLeave', 'CursorHold' }, {
+        group = vim.api.nvim_create_augroup('LSPCodeLens', { clear = true }),
+        callback = function()
+          vim.lsp.codelens.refresh()
+        end,
+        buffer = bufnr,
+      })
+    end,
+  },
+
+  -- svelte = {
+  --   filetypes = { 'typescript', 'javascript', 'svelte', 'html', 'css' },
+  -- },
 }
 
 return M

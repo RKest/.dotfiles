@@ -32,10 +32,12 @@ require('lazy').setup({
   require 'plugins.autopairs', -- Auto pairs
   require 'plugins.neo-tree', -- Neo tree
 
-  require 'plugins.nvim-ufo', -- Code folding
   require 'plugins.debug', -- Debugger
 
   require 'plugins.cmake', -- CMake
+  require 'plugins.noice', -- Floating command line
+
+  require 'plugins.lualine', -- Status line
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

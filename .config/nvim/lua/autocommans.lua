@@ -9,10 +9,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = { '*.c', '*.cpp' },
-  group = vim.api.nvim_create_augroup('rkest-set-makeprg', { clear = true }),
+  group = vim.api.nvim_create_augroup('rkest-set-makeprg-c', { clear = true }),
   callback = function()
     vim.bo.makeprg = 'cmake --build build -j`nproc`'
     vim.bo.errorformat = '%f:%l:%c: error: %m'
+  end,
+})
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = { '*.odin' },
+  group = vim.api.nvim_create_augroup('rkest-set-makeprg-rs', { clear = true }),
+  callback = function()
+    vim.bo.makeprg = './check'
+    -- /home/max/projs/cloud-odin/cloud/bitmap.odin(42:3) Error: Unknown field 'buffer_ptr' in structure literal
+    vim.bo.errorformat = '%f(%l:%c) Error: %m'
   end,
 })
 

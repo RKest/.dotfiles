@@ -11,5 +11,7 @@ local M = {
 
   -- Pretty icons
   { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+  -- Symbols
+  { 'nvim-telescope/telescope-symbols.nvim' },
 }
 return M

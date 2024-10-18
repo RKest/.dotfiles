@@ -28,6 +28,9 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Make substitions line global by default
+vim.opt.gdefault = true
+
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 

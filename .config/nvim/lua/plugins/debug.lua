@@ -148,5 +148,6 @@ return {
         processId = require('dap.utils').pick_process,
       },
     }
+    dap.configurations.c = dap.configurations.cpp
   end,
 }

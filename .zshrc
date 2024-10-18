@@ -6,6 +6,7 @@ if [ ! -d "$FZF_HOME" ]; then
   source $FZF_HOME/install --bin --completion --key-bindings --no-update-rc --no-bash --no-fish
 fi
 
+export PATH="$HOME/bin:$PATH"
 # Source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -117,3 +118,16 @@ export PATH=$PATH:$HOME/nvim-linux64/bin
 export PATH="$HOME/.go/bin:$PATH"
 export EDITOR=nvim
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/max/.opam/opam-init/init.zsh' ]] || source '/home/max/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
