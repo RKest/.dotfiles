@@ -1,0 +1,63 @@
+
+live_config_reload = true
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+bold = { family = "JetBrainsMono NFM", style = "Bold" }
+italic = { family = "JetBrainsMono NFM", style = "SemiBold Italic" }
+normal = { family = "JetBrainsMono NFM", style = "SemiBold" }
+size = 14
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = -5
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+opacity = 0.9
+decorations = "full"
+dynamic_title = true
+option_as_alt = "Both"
+startup_mode = "Maximized"
+
+[window.dimensions]
+columns = 160
+lines = 81
+
+[window.padding]
+x = 1
+y = 1
+
+[colors.normal]
+black = '#000000'
+red = '#f2201f'
+green = '#19cb00'
+yellow = '#fffd00'
+blue = '#1a8fff'
+magenta = '#fd28ff'
+cyan = '#14ffff'
+white = '#ffffff'
+

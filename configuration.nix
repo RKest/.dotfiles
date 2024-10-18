@@ -2,13 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./user.nix
-      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -63,14 +62,8 @@
     pavucontrol
     htop
     git
+    home-manager
   ];
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "max" = import ./home.nix;
-    };
-  };
 
   programs.hyprland.enable = true;
   services.greetd = {
