@@ -3,10 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs:
@@ -17,9 +13,8 @@
       specialArgs = { inherit inputs; };
       system = "x86_64-linux";
       modules = [ 
-	./lap-hardware-configuration.nix
+	./hardware/lap.nix
         ./configuration.nix 
-	inputs.home-manager.nixosModules.default
       ];
     };
 
@@ -27,9 +22,8 @@
       specialArgs = { inherit inputs; };
       system = "x86_64-linux";
       modules = [ 
-	./pc-hardware-configuration.nix
+	./hardware/pc.nix
         ./configuration.nix 
-	inputs.home-manager.nixosModules.default
       ];
     };
   };
