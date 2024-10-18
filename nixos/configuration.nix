@@ -51,6 +51,7 @@
     vim
     neovim
     alacritty
+    kitty
     waybar
     hyprshade
     rofi-wayland
