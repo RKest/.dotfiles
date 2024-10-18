@@ -17,7 +17,17 @@
       specialArgs = { inherit inputs; };
       system = "x86_64-linux";
       modules = [ 
-	./hardware-configuration.nix
+	./lap-hardware-configuration.nix
+        ./configuration.nix 
+	inputs.home-manager.nixosModules.default
+      ];
+    };
+
+    nixosConfigurations.maxpc = lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      system = "x86_64-linux";
+      modules = [ 
+	./pc-hardware-configuration.nix
         ./configuration.nix 
 	inputs.home-manager.nixosModules.default
       ];
