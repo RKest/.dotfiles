@@ -55,7 +55,6 @@
     hyprshade
     rofi-wayland
     firefox
-    tmux
     wget
     zsh-powerlevel10k
     meslo-lgs-nf
