@@ -23,16 +23,21 @@ in
     pkgs.tmux
     pkgs.wl-clipboard
     pkgs.gnumake
-    pkgs.clang
-    pkgs.clang-tools
     pkgs.nixd
     pkgs.meslo-lgs-nf
     pkgs.swaybg
     pkgs.hyprpicker
+    pkgs.nautilus
+    pkgs.unzip
+    pkgs.fd
+    pkgs.ripgrep
+    pkgs.tree
+    pkgs.bat
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   home.file = {
+    ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink "/home/max/.dotfiles/.gitconfig";
     "${config.xdg.configHome}/hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink "/home/max/.dotfiles/hyprland.conf";
     "${config.xdg.configHome}/alacritty/alacritty.toml".source = config.lib.file.mkOutOfStoreSymlink "/home/max/.dotfiles/alacritty.toml";
     "${config.xdg.configHome}/waybar" = {
@@ -47,7 +52,8 @@ in
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    NIX_PATH = "~/.nix-defexpr/channels_root/nixos/nixpkgs";
+    GTK_THEME = "Adwaita:dark";
+    # GTK_THEME = "Tokyonight-Dark-B";
   };
 
   programs.home-manager.enable = true;
@@ -55,6 +61,11 @@ in
     enable = true;
     enableZshIntegration = true;
     options = [ "--cmd cd" ];
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.zsh = {
@@ -109,6 +120,7 @@ in
       }
     ];
     extraConfig = ''
+      set-option -g default-shell ${pkgs.zsh}/bin/zsh
       set-option -g renumber-windows on
 
       bind -n S-Left  previous-window
@@ -116,5 +128,37 @@ in
       bind -n M-H previous-window
       bind -n M-L next-window
     '';
+  };
+
+  dconf = {
+    settings = {
+      "org/gnome/desktop/interface" = {
+	gtk-theme = "Adwaita-dark";
+	color-scheme = "prefer-dark";
+      };
+    };
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "Adwaita-dark";
+    style = {
+      name = "Adwaita-dark";
+      package = pkgs.adwaita-qt;
+    };
+  };
+
+  xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+      configPackages = with pkgs; [ xdg-desktop-portal-gtk ];
   };
 }

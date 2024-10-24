@@ -1,6 +1,10 @@
 
 live_config_reload = true
 
+[shell]
+program = "/usr/bin/env"
+args = [ "zsh", "-c", "tmux", "new-session", "-A", "-s", "0" ]
+
 [bell]
 animation = "EaseOutExpo"
 duration = 0
@@ -16,7 +20,7 @@ TERM = "xterm-256color"
 bold = { family = "JetBrainsMono NFM", style = "Bold" }
 italic = { family = "JetBrainsMono NFM", style = "SemiBold Italic" }
 normal = { family = "JetBrainsMono NFM", style = "SemiBold" }
-size = 14
+size = 24
 
 [font.glyph_offset]
 x = 0
