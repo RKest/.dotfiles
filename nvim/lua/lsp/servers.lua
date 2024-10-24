@@ -1,3 +1,6 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local M = {
   clangd = {
     cmd = { "clangd" },
@@ -15,6 +18,14 @@ local M = {
         }
       },
     },
+  },
+  neocmake = {
+    cmd = { "neocmakelsp", "--stdio" },
+    filetypes = { "cmake", "txt" },
+    capabilites = capabilities,
+  },
+  clojure_lsp = {
+    filetyes = { "clj", "clojure", "edn" },
   },
 }
 
