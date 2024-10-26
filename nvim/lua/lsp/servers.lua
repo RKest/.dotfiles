@@ -27,6 +27,10 @@ local M = {
   clojure_lsp = {
     filetyes = { "clj", "clojure", "edn" },
   },
+  phpactor = {
+    init_options = {
+    }
+  },
 }
 
 return M
