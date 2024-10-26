@@ -12,12 +12,14 @@ let minimalTmux = pkgs.tmuxPlugins.mkTmuxPlugin {
 };
 in
 {
+  nixpkgs.config.allowUnfree = true;
   home.username = "max";
   home.homeDirectory = "/home/max";
 
   home.stateVersion = "24.05"; # Don't change
 
   home.packages = [
+    pkgs.neovim
     pkgs.fzf
     pkgs.ytarchive
     pkgs.tmux
@@ -33,9 +35,10 @@ in
     pkgs.ripgrep
     pkgs.tree
     pkgs.bat
+    pkgs.obsidian
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
-
+  
   home.file = {
     ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink "/home/max/.dotfiles/.gitconfig";
     "${config.xdg.configHome}/hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink "/home/max/.dotfiles/hyprland.conf";
