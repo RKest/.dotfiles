@@ -14,4 +14,5 @@ require('lazy').setup {
     require 'plugins.lualine',
     require 'lsp.cmp',
     require 'lsp.lsp',
+    require 'plugins.tmux-navigator',
 }

@@ -3,7 +3,7 @@ live_config_reload = true
 
 [shell]
 program = "/usr/bin/env"
-args = [ "zsh", "-c", "tmux", "new-session", "-A", "-s", "0" ]
+args = [ "zsh" ]
 
 [bell]
 animation = "EaseOutExpo"
