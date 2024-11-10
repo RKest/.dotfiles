@@ -5,6 +5,8 @@ require 'install-lazy'
 
 require('lazy').setup {
     'tpope/vim-sleuth', -- Auto tabstop and shiftwidth
+    'github/copilot.vim',
+    { 'mrcjkb/rustaceanvim', version = '^5', lazy = false },
 
     require 'themes.tokyonight',
     require 'plugins.neo-tree',
@@ -15,4 +17,5 @@ require('lazy').setup {
     require 'lsp.cmp',
     require 'lsp.lsp',
     require 'plugins.tmux-navigator',
+    require 'plugins.tree-sitter'
 }

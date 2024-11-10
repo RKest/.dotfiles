@@ -44,3 +44,13 @@ vim.keymap.set('n', '<leader>m', '<cmd>make<CR>', { desc = 'Silent [M]ake' })
 vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>', { desc = '[N]ext quickfix list entry' })
 vim.keymap.set('n', '<C-p>', '<cmd>cprev<CR>', { desc = '[P]revious quickfix list entry' })
 vim.keymap.set('n', '<C-c>', '<cmd>cclose<CR>', { desc = '[C]lose quickfix list' })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern =  "*.hs" ,
+  callback = function()
+    vim.bo.expandtab = true     -- Convert tabs to spaces
+    vim.bo.tabstop = 4          -- Number of spaces for a tab
+    vim.bo.shiftwidth = 4       -- Number of spaces for indentation
+    vim.bo.softtabstop = 2      -- Number of spaces for a tab in insert mode
+  end,
+})

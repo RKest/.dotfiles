@@ -31,6 +31,36 @@ local M = {
     init_options = {
     }
   },
+  emmet_language_server = {
+    filetypes = { "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "typescriptreact", "htmlangular", "php"}
+  },
+  gopls = {
+    autostart = true,
+  },
+  basedpyright = {
+    cmd = { "basedpyright-langserver", "--stdio", "--pythonpath", "/home/max/.nix-profile/bin/python3" },
+  },
+  ts_ls = {},
+
+  ocamllsp = {
+    on_attach = function(_, bufnr)
+      local settings = {
+        codelens = { enable = true },
+        inlayHints = { enable = true },
+      }
+      vim.lsp.buf_notify(bufnr, vim.lsp.protocol.Methods.workspace_didChangeConfiguration, {
+        settings = settings,
+      })
+      vim.api.nvim_create_autocmd({ 'BufEnter', 'InsertLeave', 'CursorHold' }, {
+        group = vim.api.nvim_create_augroup('LSPCodeLens', { clear = true }),
+        callback = function()
+          vim.lsp.codelens.refresh()
+        end,
+        buffer = bufnr,
+      })
+    end,
+  },
+  svelte = {}
 }
 
 return M

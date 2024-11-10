@@ -1,8 +1,0 @@
-[user]
-	email = max.ind@o2.pl
-	name = RKest
-[push]
-	autoSetupRemote = true
-[init]
-	defaultBranch = main
-
