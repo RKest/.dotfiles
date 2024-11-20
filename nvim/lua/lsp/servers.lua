@@ -1,6 +1,12 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+vim.filetype.add({
+  extension = {
+    purs = "purescript",
+  }
+})
+
 local M = {
   clangd = {
     cmd = { "clangd" },
@@ -60,7 +66,16 @@ local M = {
       })
     end,
   },
-  svelte = {}
+  svelte = {},
+  rescriptls = {},
+  purescriptls = {
+    filetypes = { "purescript" },
+    settings = {
+      purescript = {
+        addSpagoSources = true
+      }
+    },
+  },
 }
 
 return M

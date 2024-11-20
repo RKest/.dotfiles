@@ -2,7 +2,6 @@
 let
   teminalUtils = [
     pkgs.neofetch
-    pkgs.nixd
     pkgs.neovim
     pkgs.fzf
     pkgs.tmux
@@ -16,10 +15,15 @@ let
     pkgs.htop
     pkgs.nodejs
     pkgs.python3
-    pkgs.basedpyright
     pkgs.zip
-    pkgs.web-ext
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
+  lspPkgs = [
+    pkgs.nixd
+    pkgs.basedpyright
+    pkgs.typescript-language-server
+    pkgs.emmet-language-server
   ];
 
   guiPkgs = [
@@ -29,6 +33,7 @@ let
   ];
 
   mediaPkgs = [
+    pkgs.playerctl
     pkgs.ytarchive
     pkgs.yt-dlp
     pkgs.mpv
@@ -39,6 +44,7 @@ in
     terminalUtilsPkgs.enable = lib.mkEnableOption "enables universal terminal utils";
     guiPkgs.enable = lib.mkEnableOption "enables gui packages";
     mediaPkgs.enable = lib.mkEnableOption "enables media packages";
+    lspPkgs.enable = lib.mkEnableOption "enables lsp packages";
   };
 
   config = {
@@ -46,6 +52,7 @@ in
       (lib.optionals config.terminalUtilsPkgs.enable teminalUtils)
       (lib.optionals config.guiPkgs.enable guiPkgs)
       (lib.optionals config.mediaPkgs.enable mediaPkgs)
+      (lib.optionals config.lspPkgs.enable lspPkgs)
     ];
   };
 }

@@ -30,6 +30,7 @@
   terminalUtilsPkgs.enable = true;
   guiPkgs.enable = true;
   mediaPkgs.enable = true;
+  lspPkgs.enable = true;
 
   rofi.enable = true;
   zsh.enable = true;

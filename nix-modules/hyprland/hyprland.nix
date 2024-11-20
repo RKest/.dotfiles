@@ -9,6 +9,8 @@
       pkgs.wlogout
       pkgs.waybar
       pkgs.wl-clipboard
+      pkgs.hyprshade
+      pkgs.wf-recorder
     ];
 
     home.file."${config.xdg.configHome}/waybar" = {
@@ -110,13 +112,17 @@
 	"$mod, mouse:273, resizewindow"
       ];
 
-      bindel = [
+      bindle = [
 	",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
 	",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
 	",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 	",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 	",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
 	",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ];
+
+      bindl = [
+	",XF86AudioPlay, exec, playerctl play-pause"
       ];
 
       windowrulev2 = ["suppressevent maximize, class:.*" "float,class:.*pavucontrol.*"];
