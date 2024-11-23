@@ -6,7 +6,14 @@ require 'install-lazy'
 require('lazy').setup {
     'tpope/vim-sleuth', -- Auto tabstop and shiftwidth
     'github/copilot.vim',
-    { 'mrcjkb/rustaceanvim', version = '^5', lazy = false },
+
+    { '2kabhishek/nerdy.nvim',
+        dependencies = {
+            'stevearc/dressing.nvim',
+            'nvim-telescope/telescope.nvim',
+        },
+        cmd = 'Nerdy',
+    },
 
     require 'themes.tokyonight',
     require 'plugins.neo-tree',

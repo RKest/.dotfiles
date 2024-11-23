@@ -1,6 +1,7 @@
 { pkgs, config, lib, ... }:
 let
   teminalUtils = [
+    pkgs.neovide
     pkgs.neofetch
     pkgs.neovim
     pkgs.fzf
