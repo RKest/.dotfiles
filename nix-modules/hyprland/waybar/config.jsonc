@@ -12,7 +12,8 @@
           "firefox": "󰈹  ",
           "Alacritty": "󰞷  ",
           "org.gnome.Nautilus": "  ",
-          "Neovide": "  "
+          "Neovide": "  ",
+          "Obsidian": "  ",
         },
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
