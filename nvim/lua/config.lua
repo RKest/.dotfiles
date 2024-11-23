@@ -64,3 +64,7 @@ vim.opt.scrolloff = 10
 
 -- Autosave
 vim.opt.autowrite = true
+
+-- Neovide
+vim.g.neovide_transparency = 0.8
+vim.o.guifont = "JetBrainsMono NFM:h14"

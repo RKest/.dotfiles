@@ -41,8 +41,8 @@ mouse = "Middle"
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [window]
-opacity = 0.9
-decorations = "full"
+opacity = 0.8
+decorations = "Full"
 dynamic_title = true
 option_as_alt = "Both"
 startup_mode = "Maximized"
@@ -65,3 +65,5 @@ magenta = '#fd28ff'
 cyan = '#14ffff'
 white = '#ffffff'
 
+[colors.primary]
+background = '#000000'
