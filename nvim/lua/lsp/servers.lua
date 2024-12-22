@@ -8,10 +8,30 @@ vim.filetype.add({
 })
 
 local M = {
+  lua_ls = {
+   on_init = function(client)
+      client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+        runtime = {
+          version = 'LuaJIT'
+        },
+        workspace = {
+          checkThirdParty = false,
+          library = {
+            vim.env.VIMRUNTIME
+          }
+        }
+      })
+    end,
+    settings = {
+      Lua = {}
+    }
+  },
+
   clangd = {
     cmd = { "clangd" },
     filetypes = { "c", "cpp", "h", "hpp", "cuda" },
   },
+
   nixd = {
     cmd = { "nixd" },
     filetypes = { "nix" },
@@ -76,6 +96,10 @@ local M = {
       }
     },
   },
+  elmls = {},
+  fsautocomplete = {},
+  htmx = {},
+  tailwindcss = {},
+  tinymist = {},
 }
-
 return M

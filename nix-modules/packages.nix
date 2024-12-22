@@ -1,9 +1,16 @@
 { pkgs, config, lib, ... }:
 let
   teminalUtils = [
+    pkgs.vial
+    pkgs.neovim
+    pkgs.ffmpeg
+    pkgs.wget
+    pkgs.dotnet-sdk
+    pkgs.fsharp
+    pkgs.btop
     pkgs.neovide
     pkgs.neofetch
-    pkgs.neovim
+    pkgs.difftastic
     pkgs.fzf
     pkgs.tmux
     pkgs.unzip
@@ -17,19 +24,28 @@ let
     pkgs.nodejs
     pkgs.python3
     pkgs.zip
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.typst
   ];
 
   lspPkgs = [
+    pkgs.fantomas
+    pkgs.tinymist
+    pkgs.lua-language-server
+    pkgs.clang-tools
     pkgs.nixd
     pkgs.basedpyright
     pkgs.typescript-language-server
     pkgs.emmet-language-server
+    pkgs.tailwindcss-language-server
+    pkgs.htmx-lsp
   ];
 
   guiPkgs = [
+    pkgs.zathura
     pkgs.nautilus
     pkgs.firefox
+    pkgs.brave
     pkgs.obsidian
   ];
 

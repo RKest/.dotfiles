@@ -65,6 +65,18 @@ vim.opt.scrolloff = 10
 -- Autosave
 vim.opt.autowrite = true
 
+-- Wildmenu
+vim.opt.wildmenu = true
+vim.opt.wildmode = 'full:lastused'
+vim.opt.wildoptions = 'tagfile'
+
 -- Neovide
-vim.g.neovide_transparency = 0.8
+-- vim.g.neovide_transparency = 0.8
 vim.o.guifont = "JetBrainsMono NFM:h14"
+vim.g.neovide_position_animation_length = 0
+vim.g.neovide_cursor_animation_length = 0.00
+vim.g.neovide_cursor_trail_size = 0
+vim.g.neovide_cursor_animate_in_insert_mode = false
+vim.g.neovide_cursor_animate_command_line = false
+vim.g.neovide_scroll_animation_far_lines = 0
+vim.g.neovide_scroll_animation_length = 0.00

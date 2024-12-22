@@ -21,7 +21,6 @@ vim.api.nvim_create_autocmd('BufEnter', {
   group = vim.api.nvim_create_augroup('rkest-set-makeprg-rs', { clear = true }),
   callback = function()
     vim.bo.makeprg = './check'
-    -- /home/max/projs/cloud-odin/cloud/bitmap.odin(42:3) Error: Unknown field 'buffer_ptr' in structure literal
     vim.bo.errorformat = '%f(%l:%c) Error: %m'
   end,
 })

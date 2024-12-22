@@ -14,6 +14,9 @@
           "org.gnome.Nautilus": "  ",
           "Neovide": "  ",
           "Obsidian": "  ",
+          "Emacs": "  ",
+          "Brave-browser": "  ",
+          "org.pwmt.zathura": "󰐣  "
         },
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",

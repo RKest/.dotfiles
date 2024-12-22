@@ -5,24 +5,27 @@ require 'install-lazy'
 
 require('lazy').setup {
     'tpope/vim-sleuth', -- Auto tabstop and shiftwidth
-    'github/copilot.vim',
+    -- 'github/copilot.vim', -- Copilot
+    'direnv/direnv.vim', -- Direnv
 
-    { '2kabhishek/nerdy.nvim',
-        dependencies = {
-            'stevearc/dressing.nvim',
-            'nvim-telescope/telescope.nvim',
-        },
-        cmd = 'Nerdy',
-    },
-
-    require 'themes.tokyonight',
-    require 'plugins.neo-tree',
-    require 'plugins.telescope',
-    require 'plugins.which-key',
-    require 'plugins.noice',
-    require 'plugins.lualine',
+    -- Lsp
     require 'lsp.cmp',
     require 'lsp.lsp',
-    require 'plugins.tmux-navigator',
-    require 'plugins.tree-sitter'
+
+    -- Themes
+    -- require 'themes.tokyonight',
+    require 'themes.calvera',
+
+    -- Plugins
+    require 'plugins.telescope',
+    require 'plugins.which-key',
+    -- require 'plugins.noice',
+    require 'plugins.lualine',
+    require 'plugins.tree-sitter',
+    require 'plugins.nerdy',
+    require 'plugins.oil',
+    require 'plugins.tailwind-tools',
+    require 'plugins.img-clip',
+    require 'plugins.fzf-lua',
 }
+
