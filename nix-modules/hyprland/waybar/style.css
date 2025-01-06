@@ -2,32 +2,31 @@
     border: none;
     font-family: JetBrainsMono NF;
     font-size: 15px;
+    background-color: transparent;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0);
+    background-color: rgba(0, 0, 0, 0.8);
     transition-property: background-color;
     transition-duration: .5s;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
 #workspaces {
-    background-color: #0D181E;
-    border-radius: 10px;
-    margin-left: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+    border-radius: 0px;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
+    padding: 0 0px;
+    background-color: rgba(0, 0, 0, 0.8);
     color: #8a8a8a;
+    border-radius: 0px;
 }
 
 #workspaces button:hover {
     box-shadow: inherit;
+    border-radius: 0px;
 }
 
 #workspaces button.focused {
@@ -61,8 +60,7 @@ window#waybar.hidden {
 #custom-power,
 #mpd {
     padding: 0 10px;
-    border-radius: 10px;
-    background-color: #0D181E;
+    background-color: rgba(0, 0, 0, 0.8);
     color: #aaaaaa;
 }
 
@@ -77,37 +75,6 @@ label:focus {
     background-color: #000000;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
 #tray {
-    background-color: transparent;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
+    background-color: rgba(0, 0, 0, 0.8);
 }

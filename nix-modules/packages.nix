@@ -1,6 +1,7 @@
 { pkgs, config, lib, ... }:
 let
   teminalUtils = [
+    pkgs.ghostty
     pkgs.vial
     pkgs.neovim
     pkgs.ffmpeg
@@ -29,7 +30,6 @@ let
   ];
 
   lspPkgs = [
-    pkgs.fantomas
     pkgs.tinymist
     pkgs.lua-language-server
     pkgs.clang-tools
@@ -42,11 +42,10 @@ let
   ];
 
   guiPkgs = [
+    pkgs.qutebrowser
     pkgs.zathura
     pkgs.nautilus
-    pkgs.firefox
     pkgs.brave
-    pkgs.obsidian
   ];
 
   mediaPkgs = [

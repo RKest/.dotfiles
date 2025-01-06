@@ -16,9 +16,9 @@ in
     tmux.enable = lib.mkEnableOption "enables tmux";
   };
 
-  config = lib.mkIf config.tmux.enable {
+  config = {
     programs.tmux = {
-      enable = true;
+      enable = config.tmux.enable ;
       mouse = true;
       baseIndex = 1;
       escapeTime = 0;

@@ -22,7 +22,7 @@
     ./nix-modules/tmux.nix
     ./nix-modules/git.nix
     ./nix-modules/rofi/rofi.nix
-    ./nix-modules/zsh/zsh.nix
+    ./nix-modules/shell/shell.nix
     ./nix-modules/hyprland/hyprland.nix
     ./nix-modules/alacritty/alacritty.nix
   ];
@@ -33,7 +33,7 @@
   lspPkgs.enable = true;
 
   rofi.enable = true;
-  zsh.enable = true;
+  nushell.enable = true;
   zoxide.enable = true;
   direnv.enable = true;
   tmux.enable = true;

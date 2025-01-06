@@ -7,17 +7,18 @@ require('lazy').setup {
     'tpope/vim-sleuth', -- Auto tabstop and shiftwidth
     -- 'github/copilot.vim', -- Copilot
     'direnv/direnv.vim', -- Direnv
+    { 'supermaven-inc/supermaven-nvim', opts = {} },
+    { 'chomosuke/typst-preview.nvim', lazy = false, version = '1.*', opts = {}, },
 
     -- Lsp
     require 'lsp.cmp',
     require 'lsp.lsp',
 
     -- Themes
-    -- require 'themes.tokyonight',
-    require 'themes.calvera',
+    require 'themes.tokyonight',
+    -- require 'themes.calvera',
 
     -- Plugins
-    require 'plugins.telescope',
     require 'plugins.which-key',
     -- require 'plugins.noice',
     require 'plugins.lualine',

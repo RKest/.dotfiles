@@ -4,9 +4,9 @@
     rofi.enable = lib.mkEnableOption "enables rofi browser";
   };
 
-  config = lib.mkIf config.rofi.enable {
+  config = {
     programs.rofi = {
-        enable = true;
+        enable = config.rofi.enable;
         package = pkgs.rofi-wayland;
         theme = "/home/max/.dotfiles/nix-modules/rofi/spotlight-dark.rasi";
       };

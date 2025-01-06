@@ -3,7 +3,7 @@ live_config_reload = true
 
 [terminal.shell]
 program = "/usr/bin/env"
-args = [ "zsh" ]
+args = [ "nu" ]
 
 [bell]
 animation = "EaseOutExpo"
@@ -52,8 +52,8 @@ columns = 160
 lines = 81
 
 [window.padding]
-x = 1
-y = 1
+x = 0
+y = 0
 
 [colors.normal]
 black = '#000000'

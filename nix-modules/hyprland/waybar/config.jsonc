@@ -7,7 +7,7 @@
     "modules-right": ["pulseaudio", "network", "memory", "cpu", "battery", "clock", "custom/power"],
     "hyprland/workspaces": {
         "format": " <b>{icon}</b> {windows}",
-        "window-rewrite-default": "",
+        "window-rewrite-default": "  ",
         "window-rewrite": {
           "firefox": "󰈹  ",
           "Alacritty": "󰞷  ",
@@ -16,7 +16,9 @@
           "Obsidian": "  ",
           "Emacs": "  ",
           "Brave-browser": "  ",
-          "org.pwmt.zathura": "󰐣  "
+          "org.pwmt.zathura": "󰐣  ",
+          "com.mitchellh.ghostty": "󰊠  ",
+          "org.qutebrowser.qutebrowser": "  ",
         },
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",

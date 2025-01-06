@@ -4,9 +4,9 @@
     git.enable = lib.mkEnableOption "enables git";
   };
 
-  config = lib.mkIf config.git.enable {
+  config = {
     programs.git = {
-      enable = true;
+      enable = config.git.enable ;
       userName = "RKest";
       userEmail = "max.ind@o2.pl";
       extraConfig = {

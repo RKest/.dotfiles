@@ -92,7 +92,7 @@ local M = {
     filetypes = { "purescript" },
     settings = {
       purescript = {
-        addSpagoSources = true
+        addSpagoSources = true,
       }
     },
   },
