@@ -8,7 +8,29 @@ require('lazy').setup {
     -- 'github/copilot.vim', -- Copilot
     'direnv/direnv.vim', -- Direnv
     { 'supermaven-inc/supermaven-nvim', opts = {} },
-    { 'chomosuke/typst-preview.nvim', lazy = false, version = '1.*', opts = {}, },
+    { 'chomosuke/typst-preview.nvim', lazy = false, version = '1.*', opts =
+        {
+            debug = true,
+            open_cmd = "brave %s",
+            dependencies_bin = {
+              ['tinymist'] = "/home/max/.nix-profile/bin/tinymist",
+              ['websocat'] = "/home/max/.nix-profile/bin/websocat"
+            },
+        },
+    },
+    -- {
+    --   "ficcdaf/ashen.nvim",
+    --   lazy = false,
+    --   priority = 1000,
+    --   config = function ()
+    --     require 'ashen'.setup {
+    --       colors = {
+    --         background = "#000000",
+    --       },
+    --     }
+    --     vim.cmd "colorscheme ashen"
+    --   end
+    -- },
 
     -- Lsp
     require 'lsp.cmp',

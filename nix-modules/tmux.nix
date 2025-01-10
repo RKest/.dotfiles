@@ -39,7 +39,7 @@ in
       ];
       extraConfig = ''
         set-option -g default-terminal "tmux-256color"
-        set-option -g default-shell ${pkgs.zsh}/bin/zsh
+        set-option -g default-shell ${lib.getExe pkgs.nushell}
         set-option -g renumber-windows on
 
         bind -n S-Left  previous-window

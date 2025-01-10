@@ -11,7 +11,7 @@ $env.config = {
 }
 
 $env.PROMPT_COMMAND_RIGHT = ""
-$env.TRANSIENT_PROMPT_COMMAND = ""
+$env.TRANSIENT_PROMPT_COMMAND = "\n"
 $env.PROMPT_INDICATOR = $"(ansi red_bold)\n❯ (ansi reset)"
 $env.PROMPT_INDICATOR_VI_NORMAL = $"(ansi red_bold)\nn (ansi reset)"
 $env.PROMPT_INDICATOR_VI_INSERT = $"(ansi red_bold)\n❯ (ansi reset)"

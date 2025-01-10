@@ -1,6 +1,7 @@
 { pkgs, config, lib, ... }:
 let
   teminalUtils = [
+    pkgs.ueberzugpp
     pkgs.ghostty
     pkgs.vial
     pkgs.neovim
@@ -27,6 +28,7 @@ let
     pkgs.zip
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.typst
+    pkgs.websocat
   ];
 
   lspPkgs = [
