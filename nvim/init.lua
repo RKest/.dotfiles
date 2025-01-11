@@ -18,19 +18,6 @@ require('lazy').setup {
             },
         },
     },
-    -- {
-    --   "ficcdaf/ashen.nvim",
-    --   lazy = false,
-    --   priority = 1000,
-    --   config = function ()
-    --     require 'ashen'.setup {
-    --       colors = {
-    --         background = "#000000",
-    --       },
-    --     }
-    --     vim.cmd "colorscheme ashen"
-    --   end
-    -- },
 
     -- Lsp
     require 'lsp.cmp',

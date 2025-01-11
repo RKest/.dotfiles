@@ -1,6 +1,8 @@
 { pkgs, config, lib, ... }:
 let
   teminalUtils = [
+    pkgs.razergenie
+    pkgs.usbutils
     pkgs.ueberzugpp
     pkgs.ghostty
     pkgs.vial
