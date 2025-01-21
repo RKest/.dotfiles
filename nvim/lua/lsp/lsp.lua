@@ -1,5 +1,7 @@
 local M = { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
+
+  dependencies = { 'saghen/blink.cmp' },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
@@ -11,7 +13,7 @@ local M = { -- LSP Configuration & Plugins
         map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-        --
+
         -- When you move your cursor, the highlights will be cleared (the second autocommand).
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
@@ -49,12 +51,10 @@ local M = { -- LSP Configuration & Plugins
       end,
     })
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-
     local servers = require 'lsp.servers'
 
     for server_name, setup in pairs(servers) do
+      setup.capabilites = require('blink.cmp').get_lsp_capabilities()
       require'lspconfig'[server_name].setup(setup)
     end
   end,

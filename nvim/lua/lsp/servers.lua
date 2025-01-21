@@ -96,10 +96,10 @@ local M = {
       }
     },
   },
-  elmls = {},
+  -- elmls = {},
   fsautocomplete = {},
-  htmx = {},
-  tailwindcss = {},
+  -- htmx = {},
+  -- tailwindcss = {},
   tinymist = {},
 }
 return M

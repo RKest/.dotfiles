@@ -1,6 +1,9 @@
 { pkgs, config, lib, ... }:
 let
   teminalUtils = [
+    pkgs.gImageReader
+    pkgs.cloc
+    pkgs.rustup
     pkgs.razergenie
     pkgs.usbutils
     pkgs.ueberzugpp
@@ -46,6 +49,7 @@ let
   ];
 
   guiPkgs = [
+    pkgs.skanlite
     pkgs.qutebrowser
     pkgs.zathura
     pkgs.nautilus

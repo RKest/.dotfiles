@@ -7,21 +7,24 @@
   };
 
   config = {
+    home.file."${config.xdg.configHome}/nushell/config.nu" = {
+      enable = config.nushell.enable;
+      source = config.lib.file.mkOutOfStoreSymlink "/home/max/.dotfiles/nix-modules/shell/config.nu";
+      recursive = true;
+    };
+
     programs.direnv = {
       enable = config.direnv.enable;
-      enableNushellIntegration = config.nushell.enable;
       nix-direnv.enable = true;
     };
 
     programs.zoxide = {
       enable = config.zoxide.enable;
-      enableNushellIntegration = config.nushell.enable;
       options = [ "--cmd cd" ];
     };
 
     programs.nushell = {
       enable = config.nushell.enable;
-      configFile.source = ./config.nu;
     };
   };
 }
