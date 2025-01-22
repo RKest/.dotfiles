@@ -101,5 +101,6 @@ local M = {
   -- htmx = {},
   -- tailwindcss = {},
   tinymist = {},
+  scheme_langserver = {},
 }
 return M

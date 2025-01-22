@@ -53,3 +53,4 @@ alias ll = ls -l
 alias c = clear
 
 source /home/max/.cache/zoxide/init.nu
+source /home/max/.cache/carapace/init.nu

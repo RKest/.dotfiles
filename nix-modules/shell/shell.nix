@@ -4,6 +4,7 @@
     zoxide.enable = lib.mkEnableOption "enables zoxide";
     direnv.enable = lib.mkEnableOption "enables direnv";
     nushell.enable = lib.mkEnableOption "enables nushell";
+    carapace.enable = lib.mkEnableOption "enables carapace";
   };
 
   config = {
@@ -25,6 +26,10 @@
 
     programs.nushell = {
       enable = config.nushell.enable;
+    };
+
+    programs.carapace = {
+      enable = config.carapace.enable;
     };
   };
 }

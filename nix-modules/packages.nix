@@ -1,7 +1,7 @@
 { pkgs, config, lib, ... }:
 let
   teminalUtils = [
-    pkgs.gImageReader
+    pkgs.mitscheme
     pkgs.cloc
     pkgs.rustup
     pkgs.razergenie
@@ -46,6 +46,7 @@ let
     pkgs.emmet-language-server
     pkgs.tailwindcss-language-server
     pkgs.htmx-lsp
+    pkgs.akkuPackages.scheme-langserver
   ];
 
   guiPkgs = [

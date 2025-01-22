@@ -52,9 +52,10 @@ local M = { -- LSP Configuration & Plugins
     })
 
     local servers = require 'lsp.servers'
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
 
     for server_name, setup in pairs(servers) do
-      setup.capabilites = require('blink.cmp').get_lsp_capabilities()
+      setup.capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
       require'lspconfig'[server_name].setup(setup)
     end
   end,

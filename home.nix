@@ -40,4 +40,5 @@
   hyprland.enable = true;
   git.enable = true;
   alacritty.enable = true;
+  carapace.enable = true;
 }
