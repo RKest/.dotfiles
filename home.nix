@@ -33,12 +33,13 @@
   lspPkgs.enable = true;
 
   rofi.enable = true;
-  nushell.enable = true;
-  zoxide.enable = true;
-  direnv.enable = true;
   tmux.enable = true;
   hyprland.enable = true;
   git.enable = true;
   alacritty.enable = true;
+
+  zoxide.enable = true;
+  direnv.enable = true;
+  nushell.enable = true;
   carapace.enable = true;
 }

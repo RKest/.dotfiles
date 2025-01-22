@@ -55,15 +55,37 @@ lines = 81
 x = 0
 y = 0
 
+[colors.bright]
+black = "#444b6a"
+blue = "#7da6ff"
+cyan = "#0db9d7"
+green = "#b9f27c"
+magenta = "#bb9af7"
+red = "#ff7a93"
+white = "#acb0d0"
+yellow = "#ff9e64"
+
 [colors.normal]
-black = '#000000'
-red = '#f2201f'
-green = '#19cb00'
-yellow = '#fffd00'
-blue = '#1a8fff'
-magenta = '#fd28ff'
-cyan = '#14ffff'
-white = '#ffffff'
+black = "#32344a"
+blue = "#7aa2f7"
+cyan = "#449dab"
+green = "#9ece6a"
+magenta = "#ad8ee6"
+red = "#f7768e"
+white = "#787c99"
+yellow = "#e0af68"
 
 [colors.primary]
+foreground = "#a9b1d6"
 background = '#000000'
+# background = "#1a1b26"
+
+# [colors.normal]
+# black = '#000000'
+# red = '#f2201f'
+# green = '#19cb00'
+# yellow = '#fffd00'
+# blue = '#1a8fff'
+# magenta = '#fd28ff'
+# cyan = '#14ffff'
+# white = '#ffffff'
