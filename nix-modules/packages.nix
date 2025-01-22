@@ -1,6 +1,7 @@
 { pkgs, config, lib, ... }:
 let
   teminalUtils = [
+    pkgs.lazygit
     pkgs.mitscheme
     pkgs.cloc
     pkgs.rustup

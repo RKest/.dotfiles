@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ isLaptop, pkgs, lib, config, ... }:
 let
   zoomIn = amount: ''
     curr=`hyprctl getoption cursor:zoom_factor | head -n 1 | awk '{print $2}'` && hyprctl keyword cursor:zoom_factor `echo "$curr + ${lib.strings.floatToString amount}" | bc`
@@ -23,6 +23,61 @@ in
     home.file."${config.xdg.configHome}/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/max/.dotfiles/nix-modules/hyprland/waybar";
       recursive = true;
+    };
+
+    programs.hyprpanel = {
+      enable = true;
+      hyprland.enable = true;
+
+      theme = "monochrome";
+      override = {
+	theme.bar.background = "#000000";
+      };
+
+      layout = {
+	"bar.layouts" = {
+	  "*" = {
+	    left = [ "workspaces" "windowtitle" ];
+	    middle = [ "media" ];
+	    right = [ "network" "bluetooth" "volume" (lib.mkIf isLaptop "battery") "clock" "dashboard" ];
+	  };
+	};
+	"bar.workspaces.applicationIconMap" = {
+	  "brave-browser" = "󰖟";
+          "Alacritty" = "󰞷";
+          "firefox" = "󰈹";
+          "org.gnome.Nautilus" = "";
+          "Neovide" = "";
+          "Obsidian" = "";
+          "Emacs" = "";
+          "org.pwmt.zathura" = "󰐣";
+          "com.mitchellh.ghostty" = "󰊠";
+          "org.qutebrowser.qutebrowser" = "";
+	};
+      };
+
+      settings = {
+	scalingPriority = "hyprland";
+	menus.clock.time.hideSeconds = true;
+	menus.clock.time.military = true;
+	bar = {
+	  workspaces.showApplicationIcons = true;
+	  workspaces.showWsIcons = true;
+	  workspaces.show_icons = false;
+	  launcher.autoDetectIcon = true;
+	  clock.format = "%H:%M";
+	  clock.icon = "";
+	  network.label = false;
+	  bluetooth.label = false;
+	};
+	theme = {
+	  bar.outer_spacing = "0em";
+	  font = {
+	    name = "JetBrains NFM";
+	    size = "1rem";
+	  };
+	};
+      };
     };
 
     wayland.windowManager.hyprland.enable = true;

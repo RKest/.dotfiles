@@ -37,5 +37,6 @@ require('lazy').setup {
     require 'plugins.tailwind-tools',
     require 'plugins.img-clip',
     require 'plugins.fzf-lua',
+    require 'plugins.snacks',
 }
 

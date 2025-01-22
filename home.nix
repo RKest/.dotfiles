@@ -1,4 +1,4 @@
-{ config, ... }:
+{ hyprpanel, config, ... }:
 {
   nixpkgs.config.allowUnfree = true;
   home.username = "max";
@@ -25,6 +25,7 @@
     ./nix-modules/shell/shell.nix
     ./nix-modules/hyprland/hyprland.nix
     ./nix-modules/alacritty/alacritty.nix
+    hyprpanel.homeManagerModules.hyprpanel
   ];
 
   terminalUtilsPkgs.enable = true;
