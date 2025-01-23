@@ -14,16 +14,10 @@ in
     home.packages = [
       pkgs.bc
       pkgs.wlogout
-      pkgs.waybar
       pkgs.wl-clipboard
       pkgs.hyprshade
       pkgs.wf-recorder
     ];
-
-    home.file."${config.xdg.configHome}/waybar" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/max/.dotfiles/nix-modules/hyprland/waybar";
-      recursive = true;
-    };
 
     programs.hyprpanel = {
       enable = true;
@@ -84,7 +78,6 @@ in
     wayland.windowManager.hyprland.settings = {
       exec-once = [
 	"${lib.getExe pkgs.swaybg} -i ~/Downloads/bg.jpg" 
-	"${lib.getExe pkgs.waybar} &"
       ];
       exec = ["${lib.getExe pkgs.hyprshade} on blue-light-filter"];
 
