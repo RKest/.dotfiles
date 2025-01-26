@@ -56,7 +56,7 @@ x = 0
 y = 0
 
 [colors.bright]
-black = "#000000"
+black = "#444b6a"
 blue = "#7da6ff"
 cyan = "#0db9d7"
 green = "#b9f27c"
@@ -66,7 +66,7 @@ white = "#acb0d0"
 yellow = "#ff9e64"
 
 [colors.normal]
-black = "#000000"
+black = "#32344a"
 blue = "#7aa2f7"
 cyan = "#449dab"
 green = "#9ece6a"

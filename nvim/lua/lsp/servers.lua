@@ -102,5 +102,8 @@ local M = {
   -- tailwindcss = {},
   tinymist = {},
   scheme_langserver = {},
+  elixirls = {
+    cmd = { "/home/max/.nix-profile/bin/elixir-ls" };
+  },
 }
 return M

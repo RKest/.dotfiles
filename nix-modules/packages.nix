@@ -1,5 +1,9 @@
-{ pkgs, config, lib, ... }:
-let
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: let
   teminalUtils = [
     pkgs.lazygit
     pkgs.mitscheme
@@ -38,6 +42,8 @@ let
   ];
 
   lspPkgs = [
+    pkgs.elixir-ls
+    pkgs.alejandra
     pkgs.tinymist
     pkgs.lua-language-server
     pkgs.clang-tools
@@ -64,8 +70,7 @@ let
     pkgs.yt-dlp
     pkgs.mpv
   ];
-in
-{
+in {
   options = {
     terminalUtilsPkgs.enable = lib.mkEnableOption "enables universal terminal utils";
     guiPkgs.enable = lib.mkEnableOption "enables gui packages";
