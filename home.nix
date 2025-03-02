@@ -1,5 +1,8 @@
-{ hyprpanel, config, ... }:
 {
+  hyprpanel,
+  config,
+  ...
+}: {
   nixpkgs.config.allowUnfree = true;
   home.username = "max";
   home.homeDirectory = "/home/max";
@@ -8,11 +11,6 @@
   home.file."${config.xdg.configHome}/nvim" = {
     source = config.lib.file.mkOutOfStoreSymlink "/home/max/.dotfiles/nvim";
     recursive = true;
-  };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    GTK_THEME = "Adwaita:dark";
   };
 
   programs.home-manager.enable = true;

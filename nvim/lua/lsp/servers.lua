@@ -105,5 +105,6 @@ local M = {
   elixirls = {
     cmd = { "/home/max/.nix-profile/bin/elixir-ls" };
   },
+  rust_analyzer = {},
 }
 return M

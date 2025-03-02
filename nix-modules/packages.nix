@@ -1,12 +1,15 @@
 {
+  zen-browser,
   pkgs,
   config,
   lib,
   ...
 }: let
   teminalUtils = [
+    pkgs.github-cli
+    pkgs.google-drive-ocamlfuse
+    pkgs.nh
     pkgs.lazygit
-    pkgs.mitscheme
     pkgs.cloc
     pkgs.rustup
     pkgs.razergenie
@@ -57,8 +60,11 @@
   ];
 
   guiPkgs = [
-    pkgs.skanlite
-    pkgs.qutebrowser
+    pkgs.vlc
+    pkgs.qbittorrent
+    zen-browser.packages.${"x86_64-linux"}.default
+    pkgs.ghostscript
+    pkgs.pdfarranger
     pkgs.zathura
     pkgs.nautilus
     pkgs.brave
