@@ -6,6 +6,7 @@
   ...
 }: let
   teminalUtils = [
+    pkgs.go
     pkgs.github-cli
     pkgs.google-drive-ocamlfuse
     pkgs.nh
@@ -45,6 +46,7 @@
   ];
 
   lspPkgs = [
+    pkgs.gopls
     pkgs.elixir-ls
     pkgs.alejandra
     pkgs.tinymist
