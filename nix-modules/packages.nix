@@ -6,6 +6,7 @@
   ...
 }: let
   teminalUtils = [
+    pkgs.google-cloud-sdk
     pkgs.go
     pkgs.github-cli
     pkgs.google-drive-ocamlfuse

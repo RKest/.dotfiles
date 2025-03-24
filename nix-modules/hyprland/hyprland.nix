@@ -156,9 +156,8 @@ in {
 
       binds.scroll_event_delay = 0;
       bind = [
-        "${mod}, Q, exec, ${lib.getExe pkgs.alacritty}"
-        "${mod}, W, exec, neovide"
-        "${mod}, C, killactive"
+        "${mod}, W, exec, ${lib.getExe pkgs.alacritty}"
+        "${mod}, Q, killactive"
         "${mod}, M, exit"
         "${mod}, V, togglefloating"
         "${mod}, R, exec, rofi -show drun -show-icons"
