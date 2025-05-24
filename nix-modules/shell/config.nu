@@ -51,6 +51,8 @@ $env.PROMPT_INDICATOR_VI_INSERT = $"(ansi red_bold)\n❯ (ansi reset)"
 
 alias ll = ls -l
 alias c = clear
+alias v = nvim
 
 source /home/max/.cache/zoxide/init.nu
 source /home/max/.cache/carapace/init.nu
+

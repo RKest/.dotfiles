@@ -83,7 +83,6 @@ local M = {
         lualine_y = {},
         lualine_z = {},
       },
-      tabline = {},
       winbar = {},
       inactive_winbar = {},
       extensions = {},

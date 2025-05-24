@@ -60,9 +60,16 @@
     pkgs.tailwindcss-language-server
     pkgs.htmx-lsp
     pkgs.akkuPackages.scheme-langserver
+    pkgs.nodePackages.prettier
   ];
 
   guiPkgs = [
+    pkgs.vial
+    pkgs.qutebrowser
+    pkgs.libreoffice
+    pkgs.blender
+    pkgs.freecad
+    pkgs.musescore
     pkgs.vlc
     pkgs.qbittorrent
     zen-browser.packages.${"x86_64-linux"}.default

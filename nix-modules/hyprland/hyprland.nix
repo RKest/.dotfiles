@@ -27,35 +27,34 @@ in {
       enable = true;
       hyprland.enable = true;
 
-      theme = "monochrome";
       override = {
         theme.bar.background = "#000000";
       };
 
-      layout = {
-        "bar.layouts" = {
-          "*" = {
-            left = ["workspaces" "windowtitle"];
-            middle = ["media"];
-            right = ["network" "bluetooth" "volume" (lib.mkIf isLaptop "battery") "clock" "dashboard"];
+      settings = {
+        layout = {
+          "bar.layouts" = {
+            "*" = {
+              left = ["workspaces"];
+              middle = [];
+              right = ["bluetooth" "volume" (lib.mkIf isLaptop "battery") "clock" "dashboard"];
+            };
+          };
+          "bar.workspaces.applicationIconMap" = {
+            "brave-browser" = "󰖟";
+            "Alacritty" = "󰞷";
+            "firefox" = "󰈹";
+            "org.gnome.Nautilus" = "";
+            "Neovide" = "";
+            "Obsidian" = "";
+            "Emacs" = "";
+            "org.pwmt.zathura" = "󰐣";
+            "com.mitchellh.ghostty" = "󰊠";
+            "org.qutebrowser.qutebrowser" = "";
+            "zen" = "󰖟";
           };
         };
-        "bar.workspaces.applicationIconMap" = {
-          "brave-browser" = "󰖟";
-          "Alacritty" = "󰞷";
-          "firefox" = "󰈹";
-          "org.gnome.Nautilus" = "";
-          "Neovide" = "";
-          "Obsidian" = "";
-          "Emacs" = "";
-          "org.pwmt.zathura" = "󰐣";
-          "com.mitchellh.ghostty" = "󰊠";
-          "org.qutebrowser.qutebrowser" = "";
-          "zen" = "󰖟";
-        };
-      };
 
-      settings = {
         scalingPriority = "hyprland";
         menus.clock.time.hideSeconds = true;
         menus.clock.time.military = true;
@@ -70,10 +69,11 @@ in {
           bluetooth.label = false;
         };
         theme = {
+          name = "monochrome";
           bar.outer_spacing = "0em";
           font = {
             name = "JetBrains NFM";
-            size = "1rem";
+            size = "0.5rem";
           };
         };
       };
@@ -89,7 +89,8 @@ in {
       env = [
         "EDITOR,nvim"
         "GTK_THEME,Adwaita:dark"
-        "FLAKE,/etc/nixos/flake.nix" # Nixos flake path for nh
+        "NH_OS_FLAKE,/home/max/.dotfiles/nix-system/flake.nix" # Nixos os flake path for nh
+        "NH_HOME_FLAKE,/home/max/.dotfiles/flake.nix" # Nixos home flake path for nh
 
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
@@ -99,9 +100,9 @@ in {
       monitor = [",preferred,auto,2"];
 
       general = {
-        gaps_in = 2;
-        gaps_out = 1;
-        border_size = 1;
+        gaps_in = 3;
+        gaps_out = 3;
+        border_size = 2;
         "col.active_border" = "rgba(950c13ee) rgba(fb6818ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
         resize_on_border = false;
@@ -121,7 +122,12 @@ in {
         };
       };
 
-      animations.enabled = false;
+      animations.enabled = true;
+      animation = [
+        "workspaces, 1, 2, default"
+        "windows, 1, 2, default, popin 80%"
+      ];
+
       dwindle.pseudotile = true;
       dwindle.preserve_split = true;
       master.new_status = "master";
@@ -132,8 +138,8 @@ in {
         follow_mouse = 1;
         sensitivity = 0;
         touchpad.natural_scroll = false;
-        repeat_delay = 300;
-        repeat_rate = 50;
+        repeat_delay = 200;
+        repeat_rate = 25;
       };
       gestures.workspace_swipe = false;
 
