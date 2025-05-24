@@ -43,6 +43,7 @@ local M = {
     vim.keymap.set('n', '<leader>sc', require('snacks').picker.command_history, { desc = '[S]earch [C]ommands' })
     vim.keymap.set('n', '<leader>sg', function () require('snacks').picker.grep { need_search = false } end, { desc = '[S]earch [G]rep' })
     vim.keymap.set('n', '<leader>sh', require('snacks').picker.help, { desc = '[S]earch [H]elp' })
+    vim.keymap.set('n', '<leader>ss', require('snacks').picker.pickers, { desc = '[S]earch [S]search' })
     vim.keymap.set('n', '<leader>s.', require('snacks').picker.recent, { desc = "[S]earch recent" })
     vim.keymap.set('n', 'gd', require('snacks').picker.lsp_definitions, { desc = '[G]o to [D]efinition' })
     vim.keymap.set('n', 'gr', require('snacks').picker.lsp_references, { desc = '[G]oto [R]eferences' })
