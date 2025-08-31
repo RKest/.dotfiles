@@ -3,6 +3,7 @@
   pkgs,
   lib,
   config,
+  quickshell,
   ...
 }: let
   zoomIn = amount: ''
@@ -91,6 +92,8 @@ in {
         "GTK_THEME,Adwaita:dark"
         "NH_OS_FLAKE,/home/max/.dotfiles/nix-system/flake.nix" # Nixos os flake path for nh
         "NH_HOME_FLAKE,/home/max/.dotfiles/flake.nix" # Nixos home flake path for nh
+
+        "QMLLS_BUILD_DIRS,${pkgs.kdePackages.qtdeclarative}/lib/qt-6/qml/:${quickshell}/lib/qt-6/qml/" # Quickshell qmlls stuff
 
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"

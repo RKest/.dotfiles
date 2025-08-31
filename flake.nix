@@ -15,6 +15,14 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-steel = {
+      url = "github:bddvlpr/nix-steel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -22,6 +30,8 @@
     nixpkgs,
     home-manager,
     zen-browser,
+    quickshell,
+    nix-steel,
     ...
   }: let
     system = "x86_64-linux";
@@ -38,6 +48,8 @@
           inherit hyprpanel;
           inherit isLaptop;
           inherit zen-browser;
+          inherit quickshell;
+          inherit nix-steel;
         };
         modules = [./home.nix];
       };

@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ... }:
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     zoxide.enable = lib.mkEnableOption "enables zoxide";
     direnv.enable = lib.mkEnableOption "enables direnv";
@@ -21,7 +25,7 @@
 
     programs.zoxide = {
       enable = config.zoxide.enable;
-      options = [ "--cmd cd" ];
+      options = ["--cmd cd"];
     };
 
     programs.nushell = {
@@ -33,4 +37,3 @@
     };
   };
 }
-

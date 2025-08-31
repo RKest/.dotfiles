@@ -26,6 +26,8 @@
     hyprpanel.homeManagerModules.hyprpanel
   ];
 
+  qt.enable = true;
+
   terminalUtilsPkgs.enable = true;
   guiPkgs.enable = true;
   mediaPkgs.enable = true;

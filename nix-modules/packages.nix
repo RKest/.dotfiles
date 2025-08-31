@@ -3,9 +3,15 @@
   pkgs,
   config,
   lib,
+  quickshell,
+  nix-steel,
   ...
 }: let
   teminalUtils = [
+    pkgs.gdb
+    pkgs.cakelisp
+    pkgs.helix
+    pkgs.cmake
     pkgs.google-cloud-sdk
     pkgs.go
     pkgs.github-cli
@@ -41,9 +47,11 @@
     pkgs.nodejs
     pkgs.python3
     pkgs.zip
+    pkgs.nerd-fonts.roboto-mono
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.typst
     pkgs.websocat
+    pkgs.w3m
   ];
 
   lspPkgs = [
@@ -61,6 +69,13 @@
     pkgs.htmx-lsp
     pkgs.akkuPackages.scheme-langserver
     pkgs.nodePackages.prettier
+    pkgs.phpactor
+    pkgs.kdePackages.qtdeclarative
+    nix-steel.packages.${"x86_64-linux"}.default
+    pkgs.neocmakelsp
+    # Typst preview
+    pkgs.tinymist
+    pkgs.websocat
   ];
 
   guiPkgs = [
@@ -73,6 +88,7 @@
     pkgs.vlc
     pkgs.qbittorrent
     zen-browser.packages.${"x86_64-linux"}.default
+    quickshell.packages.${"x86_64-linux"}.default
     pkgs.ghostscript
     pkgs.pdfarranger
     pkgs.zathura

@@ -28,7 +28,7 @@ y = 0
 
 [font.offset]
 x = 0
-y = -5
+y = -4
 
 [mouse]
 hide_when_typing = true

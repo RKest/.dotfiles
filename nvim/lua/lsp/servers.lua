@@ -106,5 +106,8 @@ local M = {
     cmd = { "/home/max/.nix-profile/bin/elixir-ls" };
   },
   rust_analyzer = {},
+  qmlls = {
+    cmd = { "qmlls", "-E" },
+  },
 }
 return M

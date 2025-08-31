@@ -56,3 +56,6 @@ alias v = nvim
 source /home/max/.cache/zoxide/init.nu
 source /home/max/.cache/carapace/init.nu
 
+use std/util "path add"
+
+# path add "/home/max/.cargo/bin/"

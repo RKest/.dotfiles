@@ -11,6 +11,7 @@ local M = { -- Autocompletion
     cmp.setup {
       completion = { completeopt = 'menu,menuone,noinsert' },
       mapping = cmp.mapping.preset.insert {
+				['<C-e>'] = cmp.config.disable,
         -- Select the [n]ext item
         ['<C-n>'] = cmp.mapping.select_next_item(),
         -- Select the [p]revious item

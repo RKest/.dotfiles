@@ -5,16 +5,17 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = inputs:
-  let 
+  outputs = inputs: let
     lib = inputs.nixpkgs.lib;
   in {
     nixosConfigurations.nixos = lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = {
+        inherit inputs;
+      };
       system = "x86_64-linux";
-      modules = [ 
-	./hardware-configuration.nix
-        ./configuration.nix 
+      modules = [
+        ./hardware-configuration.nix
+        ./configuration.nix
       ];
     };
   };

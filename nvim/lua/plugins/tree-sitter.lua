@@ -17,11 +17,41 @@ local M = {
         keymaps = {
           init_selection = "<BS>",
           node_incremental = "<BS>",
-          scope_incremental = "<C-BS>",
-          node_decremental = "<S-BS>",
+          -- scope_incremental = "<BS>",
+          -- node_decremental = "<S-BS>",
         },
       },
     }
+
+    local next = function ()
+      local node_text = function (node)
+        if node == nil then return "nil" end
+        local sr, sc, er, ec = node:range()
+        return table.concat(vim.api.nvim_buf_get_text(vim.api.nvim_get_current_buf(), sr, sc, er, ec, {}), "\n")
+      end
+
+      local ts_utils = require('nvim-treesitter.ts_utils')
+      local curr_node = ts_utils.get_node_at_cursor(0)
+      if curr_node == nil then return end
+      local sr, sc, er, ec = curr_node:range()
+
+      local curr_node_text = table.concat(vim.api.nvim_buf_get_text(vim.api.nvim_get_current_buf(), sr, sc, er, ec, {}), "\n")
+      local info = "curr_node: " .. curr_node_text .. "\n"
+
+      for i = 1,curr_node:child_count() do
+        info = info .. "child[".. i .. "]: " .. node_text(curr_node:child(i - 1)) .. "\n"
+      end
+
+      -- local next_node = curr_node:child_count()
+      -- if next_node == nil then return end
+      -- sr, sc, er, ec = next_node:range()
+      -- local next_node_text = table.concat(vim.api.nvim_buf_get_text(vim.api.nvim_get_current_buf(), sr, sc, er, ec, {}), "\n")
+
+      print(info)
+    end
+
+    vim.keymap.set("n", "<M-n>", next, { desc = "[N]ext sibling" })
+
   end,
 }
 
